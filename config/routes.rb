@@ -1,14 +1,16 @@
 Tatilplanim::Application.routes.draw do
+  match 'sitemap.xml' => 'sitemaps#sitemap'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
 
   root :to => "home#index"
-  get "/post", :to => "home#post"
-  get "/page", :to => "home#page"
-  get "/archive", :to => "home#archive"
-  get "/news", :to => "home#news"
-  get "/gallery", :to => "home#gallery"
+  get "/post", :to => "home#post", :as => :post
+  get "/page", :to => "home#page", :as => :page
+  get "/archive", :to => "home#archive", :as => :archive
+  get "/news", :to => "home#news", :as => :news
+  get "/gallery", :to => "home#gallery", :as => :gallery
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
