@@ -1,0 +1,17 @@
+<div id="loginSocial">
+  <% @url = "/auth/" %>
+  <% ['facebook', 'twitter'].each do |method| %>
+
+      <%= link_to("<i class='icon-#{method} custom'></i> #{method.camelize}".html_safe, "/auth/#{method}",
+                  :id => "loginSocial#{method.camelize}",
+                  :rel => "tooltip",
+                  "data-original-title" => "#{method.camelize} Login",
+                  "data-placement" => "top",
+                  :class => "btn btn-small") unless @user_registration.user_authentications.map(&:provider).include?(method) %>
+    <% end %>
+      <div class="clear20"></div>
+      <div class="socialBox"></div>
+</div>
+<div class="clear20"></div>
+<%# end -----------------------------------Spree social ---------------------------------- %>
+

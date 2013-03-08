@@ -1,6 +1,6 @@
 SitemapNotifier::Notifier.configure do |config|
   # Set URL to your sitemap. This is required.
-  config.sitemap_url = "http://tatilplanim.net/sitemap.xml"
+     config.sitemap_url = "http://tatilplanim.com/sitemap.xml"
   #
   # This can also be configured per model basis,
   # see https://github.com/lassebunk/sitemap_notifier#per-model-sitemap-url
@@ -28,3 +28,4 @@ SitemapNotifier::Notifier.configure do |config|
   # If you don't want the notifications to run in the background
   #   config.background = false
 end
+

@@ -59,7 +59,14 @@ module Tatilplanim
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.gem "cancan"
+
     config.assets.initialize_on_precompile = false
+
+    #Akismet
+    config.rakismet.key = '0c1ae24c878a'
+    config.rakismet.url = 'http://talkycloud.com/'
+    #config.rakismet.host = 'http://talkycloud.com/'
 
   end
 end

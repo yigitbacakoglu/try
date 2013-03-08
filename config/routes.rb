@@ -1,9 +1,7 @@
 Tatilplanim::Application.routes.draw do
+
+
   match 'sitemap.xml' => 'sitemaps#sitemap'
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
-
 
   root :to => "home#index"
   get "/post", :to => "home#post", :as => :post
@@ -11,57 +9,40 @@ Tatilplanim::Application.routes.draw do
   get "/archive", :to => "home#archive", :as => :archive
   get "/news", :to => "home#news", :as => :news
   get "/gallery", :to => "home#gallery", :as => :gallery
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get '/demo', :to => "widgets#demo", :as => :demo
+  get '/demo-1', :to => "widgets#demo", :as => :demo2
+  get '/demo-2', :to => "widgets#demo", :as => :demo3
+  match '/admin', :to => 'admin/overview#index', :as => :admin
+  match '/auth/:provider/callback' => 'authentications#create'
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  get '/sale', :to => "blogs#sale", :as => :sale
+  post '/domain/offer', :to => "blogs#save_contact_info", :as => :save_contact_info
+  resources :widgets
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  resources :posts do
+    collection do
+      post :rate
+      post :comment
+    end
+  end
+  resources :comments
 
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
+  devise_for :user_registrations,
+             :path => '/authenticate',
+             :path_names => {:sign_in => "/login", :sign_out => "/logout", :sign_up => "/register"},
+             :controllers => {:sessions => "user_sessions",
+                              :registrations => "user_registrations",
+                              :passwords => "user_passwords"
+             }
+  resources :authentications
 
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  namespace :admin do
+    resources :overview
+    resources :account, :except => [:show, :index]
+    get '/account', :as => :account, :to => 'account#show'
+    resources :widgets
+  end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public//.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

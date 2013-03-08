@@ -1,0 +1,54 @@
+<!--:match_path => new_admin_order_path-->
+
+
+<nav id="primary" class="main-nav collapsible-nav">
+  <!-- Brand -->
+  <a id="sidebar-brand" href="dashboard.html">
+    TalkyCloud
+  </a>
+  <button type="button" class="btn btn-navbar btn-inverse" data-toggle="collapse" data-target=".nav-collapse">
+    <i class="icon-reorder"></i>
+  </button>
+
+  <ul class="nav-collapse collapse">
+
+    <!-- Profile -->
+    <li class="profile">
+      <a href="#profile-opts" class="accordion-toggle" data-toggle="collapse">
+        <%= image_tag avatar_url(@current_user), :class => "avatar" %>
+        <span class="text" id="profile-text">
+            <%= @current_user.try(:firstname) %> <b class="caret"></b>
+          </span>
+      </a>
+
+      <ul id="profile-opts" class="collapse secondary">
+        <%= tab :accounts, :label => "My Account", :url => admin_account_path, :match_path => "/admin/account.*" %>
+        <li class="">
+          <%= link_to "Logout", destroy_user_registration_session_path, :method => :delete %>
+        </li>
+      </ul>
+    </li>
+
+    <!-- Dashboard -->
+    <%= tab :dashboard, :label => "Dashboard", :url => admin_path, :icon => 'dashboard',:match_path => "/admin" %>
+
+    <!-- Components -->
+    <li class="<%= "active" if request.fullpath.gsub('//', '/').match("/admin/.*widget.*").to_s == request.fullpath %>">
+
+      <a href="#components-list" class="accordion-toggle " data-toggle="collapse">
+          <span class="icon">
+            <i class="icon-microformats"></i>
+          </span>
+          <span class="text">
+            Widgets <b class="caret"></b>
+          </span>
+      </a>
+
+      <ul id="components-list" class="collapse secondary">
+        <%= tab :widgets, :label => "All", :url => admin_widgets_path, :match_path => '/admin/widgets' %>
+        <%= tab :widgets, :label => "New Widget", :url => new_admin_widget_path, :match_path => new_admin_widget_path %>
+      </ul>
+
+    </li>
+  </ul>
+</nav>

@@ -1,17 +1,30 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.12'
+gem 'rails',  '~> 3.2.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-group :development do
-  gem 'sqlite3'
-end
-
+gem 'devise'
+gem 'cancan'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
+gem 'twitter'
+gem 'fb_graph'
+gem 'mongrel', '1.2.0.pre2'
+gem "recaptcha", :require => "recaptcha/rails"
+gem 'rakismet'
+gem 'kaminari'
+gem 'mechanize'
 gem 'sitemap_notifier'
 gem 'dynamic_sitemaps'
 
+group :development do
+  gem "letsrate", "~> 1.0.8"
+  gem "rails-erd"
+  gem 'mysql2'
+end
 group :production do
   gem 'pg'
 end
@@ -19,7 +32,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails', '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

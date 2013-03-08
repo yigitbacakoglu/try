@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
 
   def index
+    Post.create(:title => "berilin asd a")
   end
 
   def news

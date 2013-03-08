@@ -64,6 +64,7 @@ Tatilplanim::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
   config.assets.precompile << Proc.new { |path|
     if path =~ /\.(css|js)\z/
       full_path = Rails.application.assets.resolve(path).to_path
@@ -78,6 +79,4 @@ Tatilplanim::Application.configure do
       false
     end
   }
-
-
 end
