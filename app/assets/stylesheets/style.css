@@ -3,7 +3,7 @@
 /* ---------------------------------------------------- */
 
 body {
-	background: #ebe9e5 url(assets/top-shine.png) repeat-x;
+	background: #ebe9e5 url(top-shine.png) repeat-x;
 	color: #5e5c5c;
 	font: 11px/1.5 Arial,"Helvetica Neue",Helvetica,sans-serif;
 }
@@ -67,7 +67,7 @@ dl { margin: 0 0 10px; }
 }
 
 	.zoom a span {
-		background: url(assets/enlarge-icon.png) no-repeat;
+		background: url(enlarge-icon.png) no-repeat;
 		bottom: 7px;
 		display: none;
 		height: 47px;
@@ -90,7 +90,7 @@ ul.arrow { list-style: none; }
 	ul.arrow li { margin: 0; }
 	
 		ul.arrow li a {
-			background: url(assets/categories-arrow.png) no-repeat 0 5px;
+			background: url(categories-arrow.png) no-repeat 0 5px;
 			display: block;
 			padding: 0 0 0 12px;
 		}
@@ -107,14 +107,14 @@ dl.horizontal dd {
 /* ---------------------------------------------------- */
 
 .form .input {
-	background: #f9f9f9 url(assets/input-bg.png) repeat-x;
+	background: #f9f9f9 url(input-bg.png) repeat-x;
 	color: #77746E;
 	border: 1px solid #d9d9d9;
 	font: 11px/1.7 Arial,Helvetica,sans-serif;
 	padding: 8px 10px;
 }
 
-.form textarea.input { background: #f9f9f9 url(assets/textarea-bg.png) repeat-x; }
+.form textarea.input { background: #f9f9f9 url(textarea-bg.png) repeat-x; }
 
 	.form input:hover, .form input:focus, .form textarea:hover, .form textarea:focus { color: #5c5c5c; }
 
@@ -124,7 +124,7 @@ dl.horizontal dd {
 	}
 
 .form .submit {
-	background: #f3f3f3 url(assets/button-bg.png);
+	background: #f3f3f3 url(button-bg.png);
 	border: 1px solid #e1dddd;
 	color: #797474;
 	cursor: pointer;
@@ -134,7 +134,7 @@ dl.horizontal dd {
 	padding: 0 20px;
 }
 	
-	.form .submit:hover { background: #f3f3f3 url(assets/button-bg-hover.png); }
+	.form .submit:hover { background: #f3f3f3 url(button-bg-hover.png); }
 
 #comment-form  {
 	color: #77746e;
@@ -229,7 +229,7 @@ dl.horizontal dd {
 /* ---------------------------------------------------- */
 
 #nav {
-	background: #fafafa url(assets/nav-bg.png) repeat-x;
+	background: #fafafa url(nav-bg.png) repeat-x;
 	border-bottom: 1px solid #fff;
 	border-top: 1px solid #e3e1d9;
 	height: 39px;
@@ -298,7 +298,7 @@ dl.horizontal dd {
 				}
 
 					#nav ul ul li a, #nav li.active ul ul li a {
-						background: url(assets/nav-arrow.png) no-repeat 12px 12px !important;
+						background: url(nav-arrow.png) no-repeat 12px 12px !important;
 						color: #fff;
 						display: block;
 						font-size: 11px;
@@ -310,8 +310,8 @@ dl.horizontal dd {
 					}
 
 						#nav ul ul li a:hover, #nav li.active ul ul li a:hover {
-							background: rgb(226, 226, 226) url(assets/nav-arrow-active.png) no-repeat 12px 12px !important; /* For IE */
-							background: rgba(226, 226, 226, 0.88) url(assets/nav-arrow-active.png) no-repeat 12px 12px !important;
+							background: rgb(226, 226, 226) url(nav-arrow-active.png) no-repeat 12px 12px !important; /* For IE */
+							background: rgba(226, 226, 226, 0.88) url(nav-arrow-active.png) no-repeat 12px 12px !important;
 							color: #9c163e !important;
 							font-weight: bold !important;
 						}
@@ -329,7 +329,7 @@ dl.horizontal dd {
 	}
 	
 		#search .input {
-			background: #f2f2f2 url(assets/input-bg.png) repeat-x;
+			background: #f2f2f2 url(input-bg.png) repeat-x;
 			border: 1px solid #e0d9d9;
 			color: #b2a8a8;
 			font: 11px/1.7 Arial,Helvetica,sans-serif;
@@ -356,7 +356,7 @@ dl.horizontal dd {
 		}
 		
 #nav-shadow {
-	background: url(assets/nav-shadow.png) repeat-x;
+	background: url(nav-shadow.png) repeat-x;
 	height: 135px;
 	margin-bottom: -105px;
 }
@@ -483,7 +483,7 @@ dl.horizontal dd {
 	}
 
 		#content .box-header {
-			background: #f2f2f2 url(assets/box-header-bg.png) repeat-x;
+			background: #f2f2f2 url(box-header-bg.png) repeat-x;
 			height: 43px;
 			line-height: 43px;
 			padding: 0 20px;
@@ -496,7 +496,7 @@ dl.horizontal dd {
 			}
 
 		#content .box-footer {
-			background: #f2f2f2 url(assets/box-footer-bg.png) repeat-x;
+			background: #f2f2f2 url(box-footer-bg.png) repeat-x;
 			height: 13px;
 			padding: 17px 20px;
 		}
@@ -512,7 +512,7 @@ dl.horizontal dd {
 }
 
 	#main .button {
-		background: #f3f3f3 url(assets/button-bg.png) repeat-x;
+		background: #f3f3f3 url(button-bg.png) repeat-x;
 		border: 1px solid #e1dddd;
 		color: #797474;
 		font-weight: bold;
@@ -521,7 +521,7 @@ dl.horizontal dd {
 		text-decoration: none !important;
 	}
 	
-		#main .button:hover { background: #f3f3f3 url(assets/button-bg-hover.png) repeat-x; }
+		#main .button:hover { background: #f3f3f3 url(button-bg-hover.png) repeat-x; }
 
 	#main .entry {
 		background: #f8f7f6;
@@ -642,8 +642,8 @@ dl.horizontal dd {
 			width: 14px;
 		}
 		
-		#main .entry.single .post-rating span.on, #main .gallery-list .gallery-rating span.on { background: url(assets/rating-star-on.png) no-repeat; }
-		#main .entry.single .post-rating span.off, #main .gallery-list .gallery-rating span.off { background: url(assets/rating-star-off.png) no-repeat; }
+		#main .entry.single .post-rating span.on, #main .gallery-list .gallery-rating span.on { background: url(rating-star-on.png) no-repeat; }
+		#main .entry.single .post-rating span.off, #main .gallery-list .gallery-rating span.off { background: url(rating-star-off.png) no-repeat; }
 		
 		#main .entry.single .post-rating p { margin: -2px 0 0; }
 
@@ -723,7 +723,7 @@ dl.horizontal dd {
 	}
 
 		#comments .comments-count, #comments .comments-count em {
-			background: url(assets/comments-count-bg-right.png) no-repeat;
+			background: url(comments-count-bg-right.png) no-repeat;
 			color: #fff;
 			display: block;
 			float: left;
@@ -738,7 +738,7 @@ dl.horizontal dd {
 		}
 
 			#comments .comments-count em {
-				background: url(assets/comments-count-bg-left.png) no-repeat;
+				background: url(comments-count-bg-left.png) no-repeat;
 				margin: 0 0 0 -29px;;
 				padding: 0 0 0 12px;
 			}
@@ -815,14 +815,14 @@ dl.horizontal dd {
 }
 
 	#main .pagination li {
-		background: #f3f3f3 url(assets/pagination-bg.png) repeat-x;
+		background: #f3f3f3 url(pagination-bg.png) repeat-x;
 		border: 1px solid #e1dddd;
 		float: left;
 		margin: 0 8px 0 0;
 	}
 	
 		#main .pagination li.active, #main .pagination li.active:hover {
-			background: #f3f3f3 url(assets/pagination-active-bg.png) repeat-x;
+			background: #f3f3f3 url(pagination-active-bg.png) repeat-x;
 			border: 1px solid #9f1840;
 		}
 
@@ -837,12 +837,12 @@ dl.horizontal dd {
 		}
 	
 			#main .pagination li.prev a {
-				background: url(assets/pagination-prev-arrows.png) no-repeat 8px 11px;
+				background: url(pagination-prev-arrows.png) no-repeat 8px 11px;
 				padding: 0 14px 0 24px;
 			}
 	
 			#main .pagination li.next a {
-				background: url(assets/pagination-next-arrows.png) no-repeat 47px 11px;
+				background: url(pagination-next-arrows.png) no-repeat 47px 11px;
 				padding: 0 24px 0 14px;
 			}
 
@@ -851,7 +851,7 @@ dl.horizontal dd {
 			}
 
 			#main .pagination li:hover {
-				background: url(assets/pagination-bg-hover.png) repeat-x;
+				background: url(pagination-bg-hover.png) repeat-x;
 			}
 			
 				#main .pagination li:hover a {
@@ -1108,7 +1108,7 @@ dl.horizontal dd {
 		#archives h6.last { width: 165px; }
 
 		#archives li {
-			background: url(assets/categories-arrow.png) no-repeat 0 5px;
+			background: url(categories-arrow.png) no-repeat 0 5px;
 			margin: 0 0 10px;
 		}
 
@@ -1358,7 +1358,7 @@ dl.horizontal dd {
 /* ---------------------------------------------------- */
 
 #footer {
-	background: #e1dfdb url(assets/footer-bg.png) repeat-x;
+	background: #e1dfdb url(footer-bg.png) repeat-x;
 	color: #72706a;
 	overflow:hidden;
 	padding: 35px 0 60px;
@@ -1413,7 +1413,7 @@ dl.horizontal dd {
 		#categories li { margin: 0 0 10px; }
 
 			#categories li a {
-				background: url(assets/categories-arrow.png) no-repeat 0 5px;
+				background: url(categories-arrow.png) no-repeat 0 5px;
 				display: block;
 				padding: 0 0 0 12px;
 				text-decoration: none;
@@ -1438,7 +1438,7 @@ dl.horizontal dd {
 				#latest-tweets li .tweet { margin: 0 0 10px; }
 			
 #footer-bottom {
-	background: #787878 url(assets/footer-bottom-bg.png) repeat-x;
+	background: #787878 url(footer-bottom-bg.png) repeat-x;
 	color: #fff;
 	height: 40px;
 	line-height: 40px;

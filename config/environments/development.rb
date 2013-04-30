@@ -35,4 +35,18 @@ Tatilplanim::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  # config/environments/production.rb
+  # config/environments/production.rb
+  #config.paperclip_defaults = {
+  #    :storage => :s3,
+  #    :s3_credentials => {
+  #        #:bucket => ENV['AWS_BUCKET'],
+  #        :bucket => 'tatilplanim',
+  #        #:access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #        :access_key_id => "AKIAIH7GPNCIVRVVISSA",
+  #        #:secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #        :secret_access_key => "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"
+  #    }
+  #}
 end

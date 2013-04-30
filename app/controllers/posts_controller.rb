@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :load_widget, :except => :show
+  before_filter :load_widget
 
 
   def show
@@ -53,8 +53,9 @@ class PostsController < ApplicationController
 
   def load_widget
     #URI.parse(env["REQUEST_URI"])
-    @current_widget = Widget.where(:key => 1, :webpage => request.host).first
+    @current_widget = Widget.where(:key => "40ecb32102ed63bb98441ae3ff0dfb", :webpage => request.host).first
     @post = @current_widget.posts.where(:url => "#{URI.parse(request.referer).path}").first
+    @post ||= @current_widget.posts.create(:url => "#{URI.parse(request.referer).path}")
     @comments = @post.comments.order("#{::Comment.quoted_table_name}.created_at desc")
     @comment = @post.comments.build
 

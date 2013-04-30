@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130225090052) do
+ActiveRecord::Schema.define(:version => 20130329215122) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -35,6 +35,17 @@ ActiveRecord::Schema.define(:version => 20130225090052) do
   end
 
   add_index "comments", ["ip_address_id"], :name => "index_comments_on_ip_address_id"
+
+  create_table "images", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+  end
 
   create_table "ip_addresses", :force => true do |t|
     t.string   "value"

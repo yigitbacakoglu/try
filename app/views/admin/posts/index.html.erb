@@ -1,0 +1,42 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="box bordered">
+        <div class="padded">
+          <div class="section-title">Posts</div>
+          <%= link_to "New Post" ,new_admin_post_path, :class => " btn" %>
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>Title</th>
+              <th>Body</th>
+              <th>Meta</th>
+              <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @posts.each do |post| %>
+                <tr>
+                  <td>
+                    <%= post.title %>
+                  </td>
+                  <td>
+                    <%= post.body %>
+                  </td>
+                  <td>
+                    <%= post.metatags %>
+                  </td>
+                  <td>
+                    <%= link_to 'Delete', admin_post_path(post), :method => :delete %>
+                    <%= link_to 'Edit', edit_admin_post_path(post) %>
+                  </td>
+                </tr>
+            <% end %>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

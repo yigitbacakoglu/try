@@ -15,6 +15,8 @@ post.rating_category = Category.create(:max_value => 6,
                                        :category_type => "rating")
 post.save
 
-
-# SecureRandom.hex(10)
-# Devise.friendly_token
+#user = UserRegistration.new
+#user.email = "admin@admin.com"
+#user.username = "admin@admin.com"
+## SecureRandom.hex(10)
+## Devise.friendly_token

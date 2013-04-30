@@ -5,7 +5,7 @@ Tatilplanim::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
@@ -79,4 +79,18 @@ Tatilplanim::Application.configure do
       false
     end
   }
+
+  # config/environments/production.rb
+  config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+          #:bucket => ENV['AWS_BUCKET'],
+          :bucket => 'tatilplanim',
+          #:access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+          :access_key_id => "AKIAIH7GPNCIVRVVISSA",
+          #:secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+          :secret_access_key => "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"
+      }
+  }
+
 end

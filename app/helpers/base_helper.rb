@@ -5,7 +5,7 @@ module BaseHelper
     rateable_obj.ratings.build if rateable_obj.ratings.blank?
     category = rateable_obj.rating_category
 
-    rating_tool = category.name
+    rating_tool = "star"
     rating_max_value = category.max_value
     avg_rate = number_with_precision rateable_obj.avg_rate, :precision => 2
 

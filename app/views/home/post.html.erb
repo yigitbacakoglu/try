@@ -22,8 +22,9 @@
   <div class="entry-content">
 
     <div class="zoom">
-      <a class="single_image" href="/assets/sample-images/single-post-1-full.jpg">
-        <img src="/assets/sample-images/single-post-1.jpg" width="650" height="210" alt="Texas Trip 2010: Abandoned ranch" class="entry-image"/>
+      <a class="single_image" href="<%= @post.images.first.url[:large] %>">
+        <%= image_tag @post.images.first.url[:large] %>
+        <!--<img src="/assets/sample-images/single-post-1.jpg" width="650" height="210" alt="Texas Trip 2010: Abandoned ranch" class="entry-image"/>-->
       </a>
     </div>
 

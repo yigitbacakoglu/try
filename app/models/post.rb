@@ -1,9 +1,11 @@
 class Post < ActiveRecord::Base
-  attr_accessible :url, :widget_id, :category_id, :title, :position, :body, :permalink, :metatags
+  attr_accessible :url, :widget_id, :category_id, :title, :position, :body, :permalink, :metatags, :images_attributes
+  has_many :images, :as => :owner, :class_name => "Image"
   belongs_to :widget
   belongs_to :category
   has_many :ratings, :as => :ratable, :class_name => 'Rating'
   has_many :comments, :class_name => "Comment"
+
 
   belongs_to :rating_category,
              :class_name => "Category",
@@ -13,11 +15,12 @@ class Post < ActiveRecord::Base
              :class_name => "Category",
              :foreign_key => :commenting_category_id
 
-
+  acts_as_url :title
   before_create :set_defaults
   before_create :save_permalink
   validates_presence_of :title
 
+  accepts_nested_attributes_for :images
   #validates_uniqueness_of :permalink
 
 

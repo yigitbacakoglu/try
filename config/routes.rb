@@ -1,6 +1,9 @@
 Tatilplanim::Application.routes.draw do
 
 
+  resources :images
+
+
   match 'sitemap.xml' => 'sitemaps#sitemap'
 
   root :to => "home#index"
@@ -18,6 +21,8 @@ Tatilplanim::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
 
   get '/sale', :to => "blogs#sale", :as => :sale
+  get '/:id', :to => 'posts#show', :as => "main_post"
+
   post '/domain/offer', :to => "blogs#save_contact_info", :as => :save_contact_info
   resources :widgets
 
@@ -43,6 +48,7 @@ Tatilplanim::Application.routes.draw do
     resources :account, :except => [:show, :index]
     get '/account', :as => :account, :to => 'account#show'
     resources :widgets
+    resources :posts
   end
 
 end

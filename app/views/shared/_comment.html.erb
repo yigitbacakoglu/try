@@ -1,0 +1,78 @@
+<%= content_for :head do %>
+    <%= javascript_include_tag "jquery.raty" %>
+    <%= javascript_include_tag "widget" %>
+    <%= stylesheet_link_tag "admin/font-awesome" %>
+    <%= stylesheet_link_tag "widget" %>
+    <%= javascript_tag "new_comment_form = '#{escape_javascript(comment_form(@comment, comment_posts_url))}'" %>
+    <!--<%#= javascript_tag "edit_comment_form = '#{escape_javascript(comment_form(@comment, update_comment_posts_url))}'" %>-->
+<% end %>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="row-fluid">
+        <div class="span12">
+          <div class="box bordered">
+            <div class="box-header">
+              <i class="icon-comments"></i> Widget Name
+              <div class="pull-right">
+                <%= rating_for(@post, :url => rate_posts_path) %>
+                <div class="post-error">
+                  <%= @object.errors.first[1] if @object == @post && @object.errors.any? %>
+                </div>
+                <div class="post-success">
+                  <%= @success[1] if @success && @success[0] == @post %>
+                </div>
+              </div>
+              <%= comment_form(@comment, comment_posts_url) %>
+            </div>
+            <div class="padded10">
+              <ul class="recent-comments" id="comment_container">
+
+                <% @comments.each do |comment| %>
+
+                    <% unless comment.new_record? %>
+
+                        <li class="comment-box" id="comment_container<%= comment.id %>">
+                          <div class="avatar pull-left" style='background-image: url(<%= avatar_url(comment.user) %>);'>
+                          </div>
+
+                          <div class="article">
+                            <div class="post-info"> <%= "#{comment.user.firstname}, #{time_ago_in_words(comment.created_at)} ago" %>
+                              <%= rating_for(comment, :url => rate_posts_path) %>
+                              <div class="post-error">
+                                <%= @object.errors.first[1] if @object == comment && @object.errors.any? %>
+                              </div>
+                              <div class="post-success">
+                                <%= @success[1] if @success && @success[0] == comment %>
+                              </div>
+                            </div>
+                            <div class="post-content-preview" id="comment_<%= comment.id %>">
+
+                              <%= label_tag "content", comment.message, :id => "comment_label_#{comment.id}" %>
+                            </div>
+
+                            <div class="article-actions">
+                              <%= link_to "Edit", edit_comment_path(comment.id), :remote => true %>  -
+                              <%= link_to "Remove", comment_path(comment.id), :remote => true, :method => :delete, :confirm => "Are you sure?" %>
+                            </div>
+                          </div>
+                        </li>
+
+                    <% end %>
+
+                <% end %>
+                <li class="comment-box view-more" style="text-align: center">
+                  <%#= link_to_next_page @comments, 'View More', :remote => true %>
+                </li>
+              </ul>
+              <%= link_to "#{image_tag 'hero-image.png', :style => 'width:75px;height:50px;'}".html_safe, "//talkycloud.com" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

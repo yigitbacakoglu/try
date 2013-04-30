@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    Post.create(:title => "berilin asd a")
+    @posts = Post.where("").page(params[:page]).per(5)
   end
 
   def news

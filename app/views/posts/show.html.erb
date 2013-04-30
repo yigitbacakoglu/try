@@ -2,9 +2,10 @@
 
   <div class="entry-header">
 
-    <h2 class="title">Texas Trip 2010: Abandoned ranch</h2>
+    <h2 class="title"><%= @post.title %></h2>
 
-    <p class="meta">Published on <a href="#">March 29, 2010</a> by <a href="#">YCB</a></p>
+    <p class="meta">Published on <a href="#"><%= @post.updated_at.to_date.strftime("%A, %B %d, %Y") %></a> by
+      <a href="#">YCB</a></p>
 
     <div class="post-rating">
       <a href="#"><span class="on"></span></a>
@@ -20,12 +21,13 @@
   <!-- end .entry-header -->
 
   <div class="entry-content">
-
     <div class="zoom">
-      <a class="single_image" href="/assets/sample-images/single-post-1-full.jpg">
-        <img src="/assets/sample-images/single-post-1.jpg" width="650" height="210" alt="Texas Trip 2010: Abandoned ranch" class="entry-image"/>
+      <a class="single_image" href="<%= @post.images.first.attachment.url(:original) %>">
+        <%= image_tag @post.images.first.attachment.url(:xlarge), :width => "650", :class => "entry-image", :height => "210" %>
+        <!--<img src="/assets/sample-images/single-post-1.jpg" width="650" height="210" alt="Texas Trip 2010: Abandoned ranch" class="entry-image"/>-->
       </a>
     </div>
+
 
     <%= @post.body.html_safe %>
 
@@ -49,14 +51,11 @@
 
       <ul>
         <li><strong>Tags:</strong>&nbsp;</li>
-        <li><a href="#">United States</a> <span class="separator">,</span>&nbsp;</li>
-        <li><a href="#">Texas</a> <span class="separator">,</span>&nbsp;</li>
-        <li><a href="#">Trips</a> <span class="separator">,</span>&nbsp;</li>
-        <li><a href="#">Private</a> <span class="separator">,</span>&nbsp;</li>
-        <li><a href="#">Abandoned</a> <span class="separator">,</span>&nbsp;</li>
-        <li><a href="#">Ranch</a> <span class="separator">,</span>&nbsp;</li>
-        <li><a href="#">Old car</a> <span class="separator">,</span>&nbsp;</li>
-        <li><a href="#">Town</a></li>
+        <% @post.metatags.split(',').each do |tag| %>
+            <li><a href="#"><%= tag %></a> <span class="separator">,</span>&nbsp;</li>
+        <% end %>
+        <li><a href="#">plan</a></li>
+
       </ul>
 
     </div>
@@ -183,11 +182,9 @@
 
         <p>BALIKESIR
 
-          Balıkesir'e ne zaman gidilir, Balıkesir'in nüfusu, Balıkesir'in coğrafi bilgileri, Balıkesir'deki oteller, taksi telefonları ve Balıkesir hakkındaki yorumları inceleyebilirsiniz. Balıkesir hakkında öğrenmek istediklerinizi bu sayfada bulabilirsiniz.
-
-
-
-
+          Balıkesir'e ne zaman gidilir, Balıkesir'in nüfusu, Balıkesir'in coğrafi bilgileri, Balıkesir'deki oteller,
+          taksi telefonları ve Balıkesir hakkındaki yorumları inceleyebilirsiniz. Balıkesir hakkında öğrenmek
+          istediklerinizi bu sayfada bulabilirsiniz.
 
 
           Yüzölçümü:
@@ -234,9 +231,11 @@
         </div>
         <!-- .comment-meta -->
 
-        <p>Burdur Arkeoloji Müzesinde sergilenen Frig, Helenistik, Roma, Bizans, Selçuklu ile Osmanlı Dönemlerine ait heykeller, steller lahit ve lahit kapakları, yazıt parçaları sergilenmektedir.
+        <p>Burdur Arkeoloji Müzesinde sergilenen Frig, Helenistik, Roma, Bizans, Selçuklu ile Osmanlı Dönemlerine ait
+          heykeller, steller lahit ve lahit kapakları, yazıt parçaları sergilenmektedir.
 
-          Ayrıca şehir merkezinde bulunan Çelikbaşlar Konağı, Baki Bey Konağı, Mısırlılar Evi, Pirişbaşlar Evi, Çetinerler Evi görülmeye değer güzellikteki yapıtlardır.
+          Ayrıca şehir merkezinde bulunan Çelikbaşlar Konağı, Baki Bey Konağı, Mısırlılar Evi, Pirişbaşlar Evi,
+          Çetinerler Evi görülmeye değer güzellikteki yapıtlardır.
 
 
           Devamı için: Burdur hakkında bilmek istedikleriniz .</p>
@@ -313,5 +312,5 @@
     </div>
 
   </form>
-
+  <%#= render :partial => "shared/comment" %>
 </div><!-- end #respond -->
